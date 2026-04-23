@@ -15,14 +15,17 @@ public class DoctorService {
         this.doctorRepository = doctorRepository;
     }
 
+    // 🔥 Get all doctors
     public List<Doctor> getAllDoctors() {
         return doctorRepository.findAll();
     }
 
+    // 🔥 Get doctors by specialty
     public List<Doctor> getDoctorsBySpecialty(String specialty) {
-        return doctorRepository.findBySpecialtyIgnoreCase(specialty);
+        return doctorRepository.findBySpecialty(specialty);
     }
 
+    // 🔥 Add doctor
     public Doctor addDoctor(Doctor doctor) {
         return doctorRepository.save(doctor);
     }
